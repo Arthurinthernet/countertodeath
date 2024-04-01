@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>countertodeath.com</title>
+    <style>
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            size: 15px;
+
+        }
+        #contador{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: larger;
+       
+        }
+       
+        #texto {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: larger;
+        }
+        #botao {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body> 
+    <button onclick="conta()" id="botao">clique aqui</button>
+    <div class="container">
+    <span id="contador"></span>
+    </div>
+
+    <p id="texto" style="display: none;">seu pc ira explodir em:</p>
+
+    <script>
+        var contador = 11;
+        var span = document.getElementById("contador");
+        
+        function conta() {
+          if (contador == 0)
+            return;
+        
+          contador -= 1;
+          span.textContent = contador;
+        
+          setTimeout(conta, 1000);
+
+          var textoParaExibir = document.getElementById("texto");
+            
+ 
+          textoParaExibir.style.display = "block";
+
+          var botao = document.getElementById("botao");
+            
+          botao.style.display = "none";
+        }
+
+    </script>
+</body>
+</html>
